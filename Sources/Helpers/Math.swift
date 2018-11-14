@@ -3,7 +3,9 @@
 import Foundation
 
 public func clamp<T: Comparable>(_ val: T, min: T, max: T) -> T {
-    assert(min < max, "min has to be less than max")
+    guard min < max else {
+        return min
+    }
     if val < min { return min }
     if val > max { return max }
     return val

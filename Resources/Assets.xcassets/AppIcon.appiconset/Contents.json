@@ -13,7 +13,7 @@
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "MAP@32.png",
+      "filename" : "Timeline@32.png",
       "scale" : "1x"
     },
     {
@@ -24,7 +24,7 @@
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "MAP@128.png",
+      "filename" : "Timeline@128.png",
       "scale" : "1x"
     },
     {
@@ -35,7 +35,7 @@
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "MAP@256.png",
+      "filename" : "Timeline@256.png",
       "scale" : "1x"
     },
     {
@@ -46,7 +46,7 @@
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "MAP@512.png",
+      "filename" : "Timeline@512.png",
       "scale" : "1x"
     },
     {

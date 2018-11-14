@@ -111,7 +111,7 @@ class TimelineViewController: NSViewController, GestureResponder, SelectionHandl
 
     private func setupViews() {
         view.wantsLayer = true
-        view.layer?.backgroundColor = style.timelineShadingColor.cgColor
+        view.layer?.backgroundColor = .black
         timelineBackgroundView.wantsLayer = true
         timelineBackgroundView.layer?.backgroundColor = style.timelineBackgroundColor.cgColor
         timelineBackgroundView.addBorder(for: .top)
@@ -202,7 +202,7 @@ class TimelineViewController: NSViewController, GestureResponder, SelectionHandl
             if let item = itemForTouch[touch] {
                 SelectionManager.instance.set(item: item, selected: false)
                 if let timelineItem = timelineCollectionView.item(at: IndexPath(item: item, section: 0)) as? TimelineFlagView, let status = createRecordForTouch[touch], status {
-                    postRecordNotification(for: timelineItem)
+                    displayWindow(for: timelineItem)
                 }
             }
 
@@ -450,13 +450,22 @@ class TimelineViewController: NSViewController, GestureResponder, SelectionHandl
         view.layer?.mask = gradientLayer
     }
 
-    private func postRecordNotification(for timelineItem: TimelineFlagView) {
+    private func displayWindow(for timelineItem: TimelineFlagView) {
+        guard let window = view.window, let record = RecordManager.instance.record(for: timelineItem.event.type, id: timelineItem.event.id) else {
+            return
+        }
+
         let translatedXPosition = timelineItem.view.frame.origin.x + (timelineItem.view.frame.width / 2) - timelineCollectionView.visibleRect.origin.x
         let transformedXPosition = max(0, translatedXPosition)
         var adjustedFrame = timelineItem.view.frame
         adjustedFrame.origin.y = timelineItem.view.frame.origin.y + timelineItem.view.frame.height - TimelineFlagView.flagHeight(for: timelineItem.event) - Constants.recordSpawnOffset
         let transformedYPosition = adjustedFrame.transformed(from: timelineScrollView.frame).transformed(from: timelineBackgroundView.frame).origin.y
-        postRecordNotification(for: timelineItem.event.type, id: timelineItem.event.id, at: CGPoint(x: transformedXPosition, y: transformedYPosition))
+        let location = CGPoint(x: transformedXPosition, y: transformedYPosition)
+        let windowType = WindowType.record(record)
+        let originX = location.x - windowType.size.width / 2
+        let originY = max(style.windowMargins, location.y - windowType.size.height)
+        let positionInScreen = window.frame.origin + CGPoint(x: originX, y: originY)
+        WindowManager.instance.display(windowType, at: positionInScreen)
     }
 
     private func scrollCollectionViews(animated: Bool = false) {
@@ -520,14 +529,6 @@ class TimelineViewController: NSViewController, GestureResponder, SelectionHandl
 
         let event = source.events[duplicateIndex]
         event.highlighted = highlighted
-    }
-
-    private func postRecordNotification(for type: RecordType, id: Int, at position: CGPoint) {
-        guard let window = view.window else {
-            return
-        }
-
-        // TODO: Display record
     }
 
     private func setupDataSource() {
