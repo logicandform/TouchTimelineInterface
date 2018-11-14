@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="qGn-1v-M5l">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="qGn-1v-M5l">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Timeline View Controller-->
         <scene sceneID="RH4-9z-fgx">
             <objects>
-                <viewController id="qGn-1v-M5l" customClass="TimelineViewController" customModule="MapExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qGn-1v-M5l" customClass="TimelineViewController" customModule="TimelineExplorer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="xW1-Dr-xog">
                         <rect key="frame" x="0.0" y="0.0" width="664" height="475"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -17,13 +16,13 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="yPT-yt-MBL">
                                 <rect key="frame" x="0.0" y="119" width="664" height="277"/>
                                 <subviews>
-                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="FoW-Io-IhM">
+                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="FoW-Io-IhM" customClass="CustomScrollView" customModule="TimelineExplorer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="80" width="664" height="197"/>
                                         <clipView key="contentView" drawsBackground="NO" id="2EQ-1e-jeX">
                                             <rect key="frame" x="0.0" y="0.0" width="664" height="197"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <collectionView id="hh4-uZ-Why" customClass="FlippedCollectionView" customModule="MapExplorer" customModuleProvider="target">
+                                                <collectionView id="hh4-uZ-Why" customClass="FlippedCollectionView" customModule="TimelineExplorer" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="664" height="197"/>
                                                     <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="aIQ-M3-5l0">
@@ -46,7 +45,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="AD1-hi-uA0">
                                         <rect key="frame" x="0.0" y="0.0" width="664" height="80"/>
                                         <subviews>
-                                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="KrB-Xy-tIn">
+                                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="KrB-Xy-tIn" customClass="CustomScrollView" customModule="TimelineExplorer" customModuleProvider="target">
                                                 <rect key="frame" x="87" y="20" width="490" height="40"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="wSJ-l6-SxW">
                                                     <rect key="frame" x="0.0" y="0.0" width="490" height="40"/>
@@ -55,7 +54,7 @@
                                                         <collectionView id="7yP-gS-dIq">
                                                             <rect key="frame" x="0.0" y="0.0" width="490" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                                            <collectionViewLayout key="collectionViewLayout" id="pZu-R1-8Lt" customClass="TimelineControlLayout" customModule="MapExplorer" customModuleProvider="target"/>
+                                                            <collectionViewLayout key="collectionViewLayout" id="pZu-R1-8Lt" customClass="TimelineControlLayout" customModule="TimelineExplorer" customModuleProvider="target"/>
                                                             <color key="primaryBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                                         </collectionView>
                                                     </subviews>

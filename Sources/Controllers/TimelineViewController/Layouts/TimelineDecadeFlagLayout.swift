@@ -6,7 +6,7 @@ import Cocoa
 
 class TimelineDecadeFlagLayout: NSCollectionViewFlowLayout {
     static let yearsPerScreen = 10
-    static let yearWidth = Configuration.touchScreen.frameSize.width / CGFloat(yearsPerScreen) / 2
+    static let yearWidth = Configuration.touchScreen.frameSize.width / CGFloat(yearsPerScreen)
     static let infiniteScrollBuffer = yearsPerScreen + 1
 
     // Cached attributes for fast access

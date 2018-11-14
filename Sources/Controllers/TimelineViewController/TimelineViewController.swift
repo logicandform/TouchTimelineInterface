@@ -46,13 +46,6 @@ class TimelineViewController: NSViewController, GestureResponder, SelectionHandl
         static let timelineIndicatorColor = CGColor.white
     }
 
-    private struct Keys {
-        static let id = "id"
-        static let app = "app"
-        static let type = "type"
-        static let position = "position"
-    }
-
 
     // MARK: Init
 
@@ -83,13 +76,6 @@ class TimelineViewController: NSViewController, GestureResponder, SelectionHandl
 
 
     // MARK: API
-
-    func fade(out: Bool) {
-        NSAnimationContext.runAnimationGroup({ _ in
-            NSAnimationContext.current.duration = Constants.animationDuration
-            view.animator().alphaValue = out ? 0 : 1
-        })
-    }
 
     func set(date: RecordDate, animated: Bool) {
         currentDate.year = adjust(year: date.year)
@@ -191,7 +177,7 @@ class TimelineViewController: NSViewController, GestureResponder, SelectionHandl
         switch pan.state {
         case .recognized, .momentum:
             updateDate(from: collectionView, with: pan.delta)
-            set(date: RecordDate(date: currentDate), animated: false)
+            scrollCollectionViews(animated: false)
         default:
             return
         }
@@ -236,7 +222,7 @@ class TimelineViewController: NSViewController, GestureResponder, SelectionHandl
         switch pan.state {
         case .recognized, .momentum:
             updateDate(from: collectionView, with: pan.delta)
-            set(date: RecordDate(date: currentDate), animated: false)
+            scrollCollectionViews(animated: false)
         default:
             return
         }

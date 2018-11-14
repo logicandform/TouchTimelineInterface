@@ -68,6 +68,7 @@
 		22A9C64B219B87EF00A2C524 /* TimelineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9C636219B87EF00A2C524 /* TimelineEvent.swift */; };
 		22A9C64C219B87EF00A2C524 /* TailDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9C637219B87EF00A2C524 /* TailDiagram.swift */; };
 		22A9C64F219B89F500A2C524 /* SelectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9C64E219B89F500A2C524 /* SelectionManager.swift */; };
+		22A9C651219B8FA800A2C524 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9C650219B8FA800A2C524 /* CustomScrollView.swift */; };
 		22B1E2AA2045F2EE00BDDF14 /* AVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E2A92045F2EE00BDDF14 /* AVKit.swift */; };
 		22C00ABB21010CB5004020F0 /* TimelineDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C00ABA21010CB5004020F0 /* TimelineDateTests.swift */; };
 		22D6F91E20B6836900C7FB5F /* NSApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6F91D20B6836800C7FB5F /* NSApplication.swift */; };
@@ -160,6 +161,7 @@
 		22A9C636219B87EF00A2C524 /* TimelineEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEvent.swift; sourceTree = "<group>"; };
 		22A9C637219B87EF00A2C524 /* TailDiagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TailDiagram.swift; sourceTree = "<group>"; };
 		22A9C64E219B89F500A2C524 /* SelectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionManager.swift; sourceTree = "<group>"; };
+		22A9C650219B8FA800A2C524 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		22B1E2A92045F2EE00BDDF14 /* AVKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVKit.swift; sourceTree = "<group>"; };
 		22C00AB821010CB5004020F0 /* TimelineExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C00ABA21010CB5004020F0 /* TimelineDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDateTests.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				2290A03420E2E4BE00F028C4 /* FlippedCollectionView.swift */,
 				225C92B82130CC6D00D629EE /* ImageView.swift */,
 				22A9C613219B4F5600A2C524 /* FadingScrollView.swift */,
+				22A9C650219B8FA800A2C524 /* CustomScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 			files = (
 				8FB48D6D2128E1D7009980B1 /* MapAnimationType.swift in Sources */,
 				22A9C63E219B87EF00A2C524 /* TimelineFlagView.swift in Sources */,
+				22A9C651219B8FA800A2C524 /* CustomScrollView.swift in Sources */,
 				A44E14F6211A392B00105F58 /* NSCollectionView.swift in Sources */,
 				22D6F91E20B6836900C7FB5F /* NSApplication.swift in Sources */,
 				22A9C608219B4D1900A2C524 /* RecordViewController.swift in Sources */,

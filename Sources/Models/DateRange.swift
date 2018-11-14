@@ -18,6 +18,11 @@ struct DateRange: Equatable {
 
     // MARK: Init
 
+    init(start: RecordDate, end: RecordDate) {
+        self.startDate = start
+        self.endDate = end
+    }
+
     init?(from date: String?) {
         guard let date = date, !date.isEmpty else {
             return nil

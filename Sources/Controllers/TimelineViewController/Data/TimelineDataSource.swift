@@ -28,11 +28,12 @@ final class TimelineDataSource: NSObject, NSCollectionViewDataSource {
 
     func setup(with records: [Record]) {
         events = records.compactMap { record in
-            if let dates = record.dates {
-                return TimelineEvent(id: record.id, type: record.type, title: record.title, dates: dates, thumbnail: nil, localThumbnail: nil)
-            } else {
-                return nil
-            }
+            let startMonth = Int.random(in: 0...11)
+            let startYear = Int.random(in: 1850...1970)
+            let endMonth = Int.random(in: 0...11)
+            let endYear = startYear + Int.random(in: 5...60)
+            let dates = DateRange(start: RecordDate(day: nil, month: startMonth, year: startYear), end: RecordDate(day: nil, month: endMonth, year: endYear))
+            return TimelineEvent(id: record.id, type: record.type, title: record.title, dates: dates, thumbnail: nil, localThumbnail: nil)
         }
 
         events = events.sorted { lhs, rhs in
@@ -46,9 +47,9 @@ final class TimelineDataSource: NSObject, NSCollectionViewDataSource {
         }
 
         uniqueEvents = events.count
-        let minYear = events.min(by: { $0.dates.startDate.year < $1.dates.startDate.year })?.dates.startDate.year ?? Constants.defaultFirstYear
-        let maxYear = events.max(by: { $0.dates.startDate.year < $1.dates.startDate.year })?.dates.startDate.year ?? Constants.defaultLastYear
-        firstYear = (minYear / 10) * 10
+        let minYear = events.map { $0.dates.startDate.year }.min() ?? Constants.defaultFirstYear
+        let maxYear = events.compactMap { $0.dates.endDate?.year }.max() ?? Constants.defaultLastYear
+        firstYear = (minYear / 10) * 10 - 10
         lastYear = (maxYear / 10) * 10 + 10
         years = Array(firstYear...lastYear)
 
