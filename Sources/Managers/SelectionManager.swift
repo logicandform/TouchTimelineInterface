@@ -31,7 +31,7 @@ final class SelectionManager {
     private weak var highlightTimer: Foundation.Timer?
 
     private struct Constants {
-        static let highlightDuration = 25
+        static let highlightDuration = 5
         static let highlightTimerInterval = 0.1
     }
 
@@ -54,6 +54,7 @@ final class SelectionManager {
     }
 
     func highlight(item: Int) {
+        timeForHighlight[item] = Constants.highlightDuration
         delegate?.handle(items: [item], highlighted: true)
     }
 

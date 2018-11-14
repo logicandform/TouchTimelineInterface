@@ -10,7 +10,6 @@ struct Configuration {
     static let touchPort: UInt16 = 13001
     static let touchScreenPosition = 1
     static let touchScreen = TouchScreen.pct2485
-    static let customMBTilesPath: String? = nil
 }
 
 
